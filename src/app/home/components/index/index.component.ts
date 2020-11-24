@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -13,12 +14,14 @@ export class IndexComponent implements OnInit {
   public profile$!: Observable<Object>;
   public auth$!: Observable<Object>;
 
-  constructor(private profileService: ProfileService, private auth: AuthService) { }
+  constructor(private profileService: ProfileService, private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.profile$ = this.profileService.getProfile();
     this.auth.authorizedStream.subscribe((data) => {
-      console.log(data);
+      if (data) {
+        this.router.navigate(['/search']);
+      }
     });
   }
 
