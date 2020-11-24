@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'https://api.spotify.com/v1/'
+  api: 'https://api.spotify.com/v1/',
+  authorize: 'https://accounts.spotify.com/authorize'
 };
 
 /*

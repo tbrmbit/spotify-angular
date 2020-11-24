@@ -1,0 +1,21 @@
+@import '../../../variables';
+
+.top-bar {
+  height: 40px;
+  padding: 20px;
+
+  &__logo {
+    display: inline-block;
+    height: 27px;
+    width: 100px;
+    svg {
+      fill: #fff;
+    }
+
+    &:hover {
+      svg {
+        fill: $gray;
+      }
+    }
+  }
+}
