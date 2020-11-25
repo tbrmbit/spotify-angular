@@ -6,19 +6,23 @@ export interface Albums {
     offset: number,
     previous: null,
     total: number,
-    items: Array<AlbumItems>
+    items: Array<AlbumItem>
   };
 }
 
-export interface AlbumItems {
-  items: Array<AlbumItem>;
-}
-
 export interface AlbumItem {
-  artists: Array<object>;
+  artists: Array<AlbumArtist>;
   images: Array<AlbumImage>;
   external_urls: { spotify: string };
   name: string;
+}
+
+export interface AlbumArtist {
+  href: string;
+  id: string;
+  name: string;
+  type: string;
+  uri: string;
 }
 
 export interface AlbumImage {

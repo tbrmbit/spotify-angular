@@ -28,7 +28,7 @@ export class IndexComponent implements OnInit {
                       searchInput => this.searchService.getAlbum(searchInput).subscribe(
                         result => {
                           this.showLastSearch = true;
-                          this.albums = result as Albums;
+                          this.albums = result;
                         },
                         error => this.showLastSearch = false
                       )
