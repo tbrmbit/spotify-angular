@@ -19,20 +19,20 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     const response = this.extractApiResponse(next.fragment);
     const lsToken = localStorage.getItem('@token');
     if (response) {
-      this.tokenService.setAuthToken(response[0][1]);
-      this.authService.authorized();
+      this.setAuthToken(response[0][1]);
       return !!response;
     } else if (lsToken) {
-      this.tokenService.setAuthToken(lsToken);
-      this.authService.authorized();
+      this.setAuthToken(lsToken);
     }
     return !response;
   }
 
+  private setAuthToken(token: string): void {
+    this.tokenService.setAuthToken(token);
+    this.authService.authorized();
+  }
+
   private extractApiResponse(fragment: string): Array<string[]> | null {
-    if (!!fragment) {
-      return fragment.split('&').map((s) => s.split('='));
-    }
-    return null;
+    return !!fragment ? fragment.split('&').map((s) => s.split('=')) : null;
   }
 }
