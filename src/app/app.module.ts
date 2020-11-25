@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CoreModule } from './core/core.module';
@@ -14,7 +15,8 @@ import { httpInterceptorProviders } from './core/http-interceptors/index';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule
   ],
   providers: [
     httpInterceptorProviders
