@@ -1,0 +1,19 @@
+.profile {
+  max-width: 50vw;
+  min-height: 45px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h4 {
+    max-width: 210px;
+  }
+
+  &__thumb-user {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    margin-right: 20px;
+  }
+}

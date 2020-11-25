@@ -15,10 +15,7 @@ export class ProfileService {
 
   public getProfile(): Observable<Object> {
     return this.http.get<any>(this.PROFILE_URL).pipe(
-      map(data => {
-        const { display_name, email, images } = data;
-        return { display_name, email, images };
-      })
+      map(res => res)
     );
   }
 

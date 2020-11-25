@@ -1,3 +1,38 @@
 .search {
-  
+  /**
+   * ANIMATIONS
+  */
+  @keyframes init-bar {
+    from {
+      opacity: 0;
+      transform: scale(1.3);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__container-search-bar{
+   padding: 10px;
+   max-width: 80vw;
+   margin: 0 auto;
+  }
+
+  &__search-bar {
+    width: 75%;
+    background: transparent;
+    padding: 10px;
+    margin: 30px auto;
+    display: block;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 32px;
+    border-bottom: 4px solid #fff;
+    animation-name: init-bar;
+    animation-duration: .7s;
+    animation-delay: .3s;
+    animation-fill-mode: backwards;
+  }
 }

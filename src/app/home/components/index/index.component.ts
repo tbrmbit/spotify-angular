@@ -1,4 +1,3 @@
-import { ProfileService } from '../../services/profile.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
@@ -11,16 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  public profile$!: Observable<Object>;
-  public auth$!: Observable<Object>;
+  public auth$!: Observable<{}>;
 
-  constructor(private profileService: ProfileService, private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log('HOME');
-    this.profile$ = this.profileService.getProfile();
     this.auth.authorizedStream.subscribe((data) => {
-      console.log(data, 'HERE');
       if (data) {
         this.router.navigate(['/search']);
       }
