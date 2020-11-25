@@ -31,6 +31,7 @@ export class TokenService {
   public setAuthToken(accessToken: any): boolean {
     this.TOKEN = accessToken || '';
     this.token$.next(this.TOKEN);
+    localStorage.setItem('@token', this.TOKEN);
     return !!this.TOKEN;
   }
 }

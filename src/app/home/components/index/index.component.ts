@@ -17,8 +17,10 @@ export class IndexComponent implements OnInit {
   constructor(private profileService: ProfileService, private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log('HOME');
     this.profile$ = this.profileService.getProfile();
     this.auth.authorizedStream.subscribe((data) => {
+      console.log(data, 'HERE');
       if (data) {
         this.router.navigate(['/search']);
       }
