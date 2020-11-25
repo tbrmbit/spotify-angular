@@ -35,4 +35,71 @@
     animation-delay: .3s;
     animation-fill-mode: backwards;
   }
+
+  .list {
+    width: 80%;
+    margin: 20px auto;
+
+    &__last-search {
+      margin-bottom: 20px;
+    }
+
+    &__albums {
+      display: flex;
+      align-content: flex-start;
+      flex-direction: row;
+      justify-content: start;
+      flex-flow: wrap;
+
+      @media only screen and (max-width: 600px) {
+        justify-content: center;
+      }
+    }
+
+    &__item {
+      width: calc(100% / 5);
+      list-style: none;
+      text-align: center;
+      margin-bottom: 20px;
+
+      a {
+        text-decoration: none;
+      }
+
+      &:hover {
+        img { transform: scale(1.2); }
+      }
+
+      @media only screen and (max-width: 600px) {
+        width: calc(100% / 3);
+      }
+
+      @media only screen and (max-width: 400px) {
+        width: 300px;
+      }
+    }
+
+    &__thumb {
+      width: 100px;
+      height: auto;
+      min-height: 100px;
+      margin-bottom: 10px;
+      transition: all .3s ease-out;
+
+      @media only screen and (max-width: 400px) {
+        width: 80%;
+      }
+    }
+
+    &__album-name {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    &__artist-name {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
 }

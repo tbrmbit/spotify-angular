@@ -6,14 +6,16 @@
   align-items: center;
   justify-content: center;
 
-  h4 {
-    max-width: 210px;
-  }
+  h4 { max-width: 210px; }
 
   &__thumb-user {
     width: 45px;
     height: 45px;
     border-radius: 100%;
     margin-right: 20px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    max-width: 80vw;
   }
 }

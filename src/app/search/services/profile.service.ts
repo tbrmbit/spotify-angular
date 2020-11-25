@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -13,7 +13,7 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  public getProfile(): Observable<Object> {
+  public getProfile(): Observable<any> {
     return this.http.get<any>(this.PROFILE_URL).pipe(
       map(res => res)
     );

@@ -5,11 +5,18 @@
           >
   </profile>
   <div class="search__container-search-bar">
-    <input type="text" class="search__search-bar" placeholder="Digite o nome do album" autofocus>
+    <input [formControl]="searchInput" type="text" class="search__search-bar" placeholder="Digite o nome do album" autofocus>
   </div>
   <div class="search__container-list list">
+    <p [hidden]="showLastSearch" class="list__last-search">Última busca realizada:</p>
     <ul class="list__albums">
-      <li class="list__item"></li>
+      <li class="list__item" *ngFor="let album of albums">
+        <a [href]="album.external_urls.spotify" target="_blank">
+          <img [src]="album.images[0].url" alt="album.name" class="list__thumb">
+          <h5 class="list__album-name">{{album.name}}</h5>
+          <p class="list__artist-name">{{album.artists[0].name}}</p>
+        </a>
+      </li>
     </ul>
   </div>
 </section>
