@@ -3,6 +3,7 @@ import { environment } from '../../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Albums } from '../models/album';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class SearchService {
 
   constructor(public http: HttpClient) { }
 
-  public getAlbum(albumName: string): Observable<any> {
+  public getAlbum(albumName: string): Observable<Albums> {
     let params = new HttpParams();
     params = params.append('q', albumName);
     params = params.append('type', this.SEARCH_TYPE);

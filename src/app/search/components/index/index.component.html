@@ -1,7 +1,7 @@
 <section class="search">
   <profile *ngIf="profile$ | async as profile" 
           [userName]="profile.display_name"
-          [thumbUser]="profile.images[0]?.url"
+          [thumbUser]="profile.images[0].url"
           >
   </profile>
   <div class="search__container-search-bar">
@@ -9,8 +9,8 @@
   </div>
   <div class="search__container-list list">
     <p [hidden]="showLastSearch" class="list__last-search">Última busca realizada:</p>
-    <ul class="list__albums">
-      <li class="list__item" *ngFor="let album of albums">
+    <ul class="list__albums" *ngIf="albums.albums">
+      <li class="list__item" *ngFor="let album of albums.albums.items">
         <a [href]="album.external_urls.spotify" target="_blank">
           <img [src]="album.images[0].url" alt="album.name" class="list__thumb">
           <h5 class="list__album-name">{{album.name}}</h5>

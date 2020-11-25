@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Profile } from '../models/profile';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  public getProfile(): Observable<any> {
+  public getProfile(): Observable<Profile> {
     return this.http.get<any>(this.PROFILE_URL).pipe(
       map(res => res)
     );
