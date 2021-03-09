@@ -1,5 +1,5 @@
 <div class="track-list">
-  <a [href]="track.href" class="track-link" *ngFor="let track of trackList; index as i">
-    <p><span class="track-link__index">{{ track.track_number }}</span> {{ track.name }} <span class="track-link__total">{{ track.duration_ms }}</span></p>
-  </a>
+  <p class="track-list__content" *ngFor="let track of trackList; index as i">
+    <span class="track-list__index">{{ track.track_number }}.</span> {{ track.name }} <span class="track-list__total">{{ msToMinutesAndSeconds(track.duration_ms) }}</span>
+  </p>
 </div>

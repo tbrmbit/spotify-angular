@@ -5,11 +5,16 @@ import { AlbumResolverService } from './services/album-resolver.service';
 
 const routes: Routes = [
   {
-    path: ':id',
-    component: IndexComponent,
-    resolve: {
-      albumId: AlbumResolverService
-    }
+    path: '',
+    children: [
+      {
+        path: ':id',
+        component: IndexComponent,
+        resolve: {
+          albumId: AlbumResolverService
+        }
+      }
+    ]
 }];
 
 @NgModule({

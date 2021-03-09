@@ -13,7 +13,6 @@ export class AlbumResolverService implements Resolve<Album>{
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Album> {
     const albumId = route.paramMap.get('id') || '';
-
     return this.albumService.getAlbum(albumId);
   }
 }

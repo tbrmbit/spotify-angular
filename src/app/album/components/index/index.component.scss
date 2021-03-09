@@ -1,0 +1,39 @@
+.album {
+  &__container {
+    max-width: 960px;
+    display: flex;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  &__highligth {
+    flex: 0 0 auto;
+    width: 30%;
+    padding-right: 30px;
+  }
+
+  &__list {
+    width: 70%;
+    flex: 0 0 auto;
+  }
+
+  &__btn-go-back {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    margin-bottom: 30px;
+
+    &:before {
+      content: '';
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      margin-right: 5px;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+      vertical-align: middle;
+    }
+  }
+
+}

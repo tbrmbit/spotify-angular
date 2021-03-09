@@ -1,0 +1,23 @@
+@import '../../../../variables';
+
+.track-list {
+  &__content {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+  }
+
+  &__index {
+    width: 25px;
+    color: $gray;
+    display: inline-block;
+  }
+
+  &__total {
+    color: $gray;
+    flex: auto;
+    text-align: right;
+    padding-left: 10px;
+  }
+}
