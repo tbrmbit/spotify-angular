@@ -15,6 +15,7 @@ export interface AlbumItem {
   images: Array<AlbumImage>;
   external_urls: { spotify: string };
   name: string;
+  id: string;
 }
 
 export interface AlbumArtist {

@@ -11,7 +11,7 @@
     <p [hidden]="showLastSearch" class="list__last-search">Última busca realizada:</p>
     <ul class="list__albums" *ngIf="albums.albums">
       <li class="list__item" *ngFor="let album of albums.albums.items">
-        <a [routerLink]="['/album', album.artists[0].id]">
+        <a [routerLink]="['/album', album.id]">
           <img [src]="album.images[0].url" alt="album.name" class="list__thumb">
           <h5 class="list__album-name">{{album.name}}</h5>
           <p class="list__artist-name">{{album.artists[0].name}}</p>
