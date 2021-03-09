@@ -12,6 +12,7 @@ export class TokenService {
   constructor() { }
 
   public get oAuthToken(): string {
+    this.TOKEN = this.TOKEN || localStorage.getItem('@token') || '';
     return this.TOKEN;
   }
 

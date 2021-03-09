@@ -24,8 +24,10 @@ export class HttpConfigInterceptor implements HttpInterceptor {
     const token = this.tokenService.oAuthToken;
     const encoded = (btoa(this.CLIENT_ID + ':' + this.SECRET_KEY));
 
+    console.log(token, 'token');
+    
     if (token) {
-      request = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + token) });
+      request = request.clone({ headers: request.headers.set('Authorization', this.tokenService.authHeader.Authorization) });
     }
 
     if (!request.headers.has('Content-Type')) {

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
+import { Album } from '../models/album';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,9 @@ import { environment } from '../../../environments/environment';
 export class AlbumService {
   constructor(public http: HttpClient) { }
 
-  public getAlbum(albumId: string): Observable<any> {
+  public getAlbum(albumId: string): Observable<Album> {
     return this.http.get<any>(this.getAlbumUrl(albumId)).pipe(
-      map(res => res),
+      map(res => res as Album),
       catchError(this.handlerError)
     );
   }

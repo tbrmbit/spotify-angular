@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   public canActivateChild(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const response = this.extractApiResponse(next.fragment);
-    const lsToken = localStorage.getItem('@token');
+    const lsToken = this.tokenService.oAuthToken;
     if (response) {
       this.setAuthToken(response[0][1]);
       return !!response;

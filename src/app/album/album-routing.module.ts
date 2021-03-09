@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './components/index/index.component';
 import { AlbumResolverService } from './services/album-resolver.service';
 
-const routes: Routes = [{
-  path: 'album/:id',
-  component: IndexComponent,
-  resolve: {
-    albumId: AlbumResolverService
-  }
+const routes: Routes = [
+  {
+    path: ':id',
+    component: IndexComponent,
+    resolve: {
+      albumId: AlbumResolverService
+    }
 }];
 
 @NgModule({

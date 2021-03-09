@@ -1,11 +1,12 @@
 <section class="album">
   <button class="album__btn-go-back">voltar</button>
   <div class="album__container">
+    <p>Testando</p>
     <div class="album__highligth">
       <highlight-album [albumThumb]="''" [albumName]="''" [artist]="''"></highlight-album>
     </div>
     <div class="album__list">
-      <track-list [trackList]="[]"></track-list>
+      <track-list [trackList]="album.items"></track-list>
     </div>
   </div>
 </section>
