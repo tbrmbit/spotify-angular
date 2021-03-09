@@ -8,7 +8,6 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class AlbumService {
-
   constructor(public http: HttpClient) { }
 
   public getAlbum(albumId: string): Observable<any> {
