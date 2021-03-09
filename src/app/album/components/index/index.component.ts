@@ -16,5 +16,4 @@ export class IndexComponent implements OnInit {
       this.album = res.albumId as Album;
     });
   }
-
 }

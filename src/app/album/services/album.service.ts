@@ -24,6 +24,6 @@ export class AlbumService {
   }
 
   private getAlbumUrl(albumId: string): string {
-    return environment.api + `albums/${albumId}/tracks`;
+    return environment.api + `albums/${albumId}`;
   }
 }

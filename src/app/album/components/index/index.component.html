@@ -3,10 +3,10 @@
   <div class="album__container">
     <p>Testando</p>
     <div class="album__highligth">
-      <highlight-album [albumThumb]="''" [albumName]="''" [artist]="''"></highlight-album>
+      <highlight-album [albumThumb]="album.images[0].url" [albumName]="album.name" [artist]="album.artists[0].name"></highlight-album>
     </div>
     <div class="album__list">
-      <track-list [trackList]="album.items"></track-list>
+      <track-list [trackList]="album.tracks.items"></track-list>
     </div>
   </div>
 </section>
