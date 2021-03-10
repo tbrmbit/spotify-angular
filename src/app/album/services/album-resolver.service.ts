@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AlbumResolverService implements Resolve<Album>{
 
-  constructor(private router: Router, private albumService: AlbumService) { }
+  constructor(private albumService: AlbumService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Album> {
     const albumId = route.paramMap.get('id') || '';

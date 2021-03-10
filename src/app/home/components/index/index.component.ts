@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class IndexComponent implements OnInit {
   public auth$!: Observable<{}>;
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(public auth: AuthService, public router: Router) { }
 
   ngOnInit(): void {
     this.auth.authorizedStream.subscribe((data) => {

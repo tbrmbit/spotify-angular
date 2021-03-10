@@ -20,7 +20,7 @@ export class ProfileService {
     );
   }
 
-  public handlerError(error: any): Promise<any> {
+  private handlerError(error: any): Promise<any> {
     console.error(error.message || error);
     return Promise.reject(error.message || error);
   }

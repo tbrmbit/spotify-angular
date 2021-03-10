@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Album } from '../../models/album';
 
 @Component({
@@ -8,12 +10,13 @@ import { Album } from '../../models/album';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  public album!: Album;
-  constructor(private route: ActivatedRoute) { }
+  public album$: Observable<Album> | undefined;
+  constructor(public route: ActivatedRoute) {
+  }
 
-  ngOnInit(): void {
-    this.route.data.subscribe(res => {
-      this.album = res.albumId as Album;
-    });
+  ngOnInit() {
+    this.album$ = this.route.data.pipe(map((data: any) => {
+      return data.albumId as Album;
+    }));
   }
 }

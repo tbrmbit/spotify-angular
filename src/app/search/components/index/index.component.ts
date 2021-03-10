@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ProfileService } from '../../services/profile.service';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { SearchService } from '../../services/search.service';
-import { map, debounceTime } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 import { Albums } from '../../models/album';
 import { Profile } from '../../models/profile';
 
