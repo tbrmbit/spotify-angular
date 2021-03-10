@@ -15,8 +15,6 @@ export class IndexComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.album$ = this.route.data.pipe(map((data: any) => {
-      return data.albumId as Album;
-    }));
+    this.album$ = this.route.data.pipe(map((data: any) => data.albumId as Album ));
   }
 }

@@ -10,7 +10,7 @@ import { ActivatedRoute, Data } from '@angular/router';
 @Injectable()
 class ActivatedRouteStub {
   public data: Observable<any>;
-  public data$:Subject<any> = new Subject();
+  public data$: Subject<any> = new Subject();
 
   constructor() {
     this.data = this.data$.asObservable();
